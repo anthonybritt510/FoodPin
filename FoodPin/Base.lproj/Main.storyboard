@@ -73,7 +73,7 @@
                                     <outlet property="nameLabel" destination="A5d-3g-sSU" id="Nzp-cH-AjR"/>
                                     <outlet property="thumbnailImageView" destination="9YE-9U-LXp" id="NPc-q0-DsB"/>
                                     <outlet property="typeLabel" destination="FbD-qC-rPM" id="s9j-Q2-u9P"/>
-                                    <segue destination="zfE-qi-WXf" kind="show" id="4kc-0y-cjR"/>
+                                    <segue destination="zfE-qi-WXf" kind="show" identifier="showRestaurantDetail" id="4kc-0y-cjR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,27 +88,66 @@
             </objects>
             <point key="canvasLocation" x="1244.9275362318842" y="154.6875"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Detail View Controller-->
         <scene sceneID="9Jy-W4-Dnv">
             <objects>
-                <viewController id="zfE-qi-WXf" sceneMemberID="viewController">
+                <viewController id="zfE-qi-WXf" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PmH-z6-Mv1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-Yq-ZmU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2y3-Yq-ZmU">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rh-7V-U20">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="FdC-3v-CKa">
+                                <rect key="frame" x="168.5" y="386" width="77" height="178"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q55-oY-yXN">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBw-Hi-F03">
+                                        <rect key="frame" x="17.5" y="71" width="42" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNy-83-JXa">
+                                        <rect key="frame" x="1" y="142" width="75.5" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FdC-3v-CKa" firstAttribute="centerX" secondItem="fIr-JV-SGb" secondAttribute="centerX" id="0aO-vp-iPX"/>
+                            <constraint firstItem="6rh-7V-U20" firstAttribute="width" secondItem="2y3-Yq-ZmU" secondAttribute="width" id="3Yv-Tj-2M0"/>
                             <constraint firstItem="2y3-Yq-ZmU" firstAttribute="leading" secondItem="fIr-JV-SGb" secondAttribute="leading" id="Cti-xA-oSN"/>
+                            <constraint firstItem="FdC-3v-CKa" firstAttribute="centerY" secondItem="fIr-JV-SGb" secondAttribute="centerY" id="FyI-oh-JFh"/>
+                            <constraint firstItem="6rh-7V-U20" firstAttribute="centerY" secondItem="2y3-Yq-ZmU" secondAttribute="centerY" id="KW0-la-ana"/>
+                            <constraint firstItem="6rh-7V-U20" firstAttribute="height" secondItem="2y3-Yq-ZmU" secondAttribute="height" id="YfK-yg-Sfe"/>
                             <constraint firstItem="fIr-JV-SGb" firstAttribute="trailing" secondItem="2y3-Yq-ZmU" secondAttribute="trailing" id="hqy-RE-fgX"/>
                             <constraint firstItem="2y3-Yq-ZmU" firstAttribute="top" secondItem="fIr-JV-SGb" secondAttribute="top" id="mZR-FK-UhA"/>
                             <constraint firstItem="fIr-JV-SGb" firstAttribute="bottom" secondItem="2y3-Yq-ZmU" secondAttribute="bottom" id="oMR-lc-f8g"/>
+                            <constraint firstItem="6rh-7V-U20" firstAttribute="centerX" secondItem="2y3-Yq-ZmU" secondAttribute="centerX" id="w7j-Hw-Vwr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fIr-JV-SGb"/>
                     </view>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="2y3-Yq-ZmU" id="uBM-9C-1Qr"/>
+                        <outlet property="restaurantLocation" destination="xNy-83-JXa" id="Z7N-hR-xlT"/>
+                        <outlet property="restaurantName" destination="q55-oY-yXN" id="cAg-Ka-EKm"/>
+                        <outlet property="restaurantType" destination="IBw-Hi-F03" id="gzg-VU-KMf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCK-71-4DM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
