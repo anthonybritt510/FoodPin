@@ -64,6 +64,10 @@ class RestaurantTableViewController: UITableViewController {
                    phoneNumber: "432-344050", image: "thaicafe.jpg", isVisited: false, rating: nil)
     ]
     
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -245,4 +249,7 @@ class RestaurantTableViewController: UITableViewController {
             }
         }
     }
+    
+    
+    
 }
